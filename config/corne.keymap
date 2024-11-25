@@ -44,6 +44,22 @@
             bindings = <&kp LCMD &kp NUMBER_5>;
             label = "GOTOPAGE5";
         };
+
+        consoleLog: consoleLog {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR &kp RPAR>;
+            label = "CONSOLELOG";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        layer3 {
+            bindings = <&mo 3>;
+            key-positions = <37 40>;
+        };
     };
 
     keymap {
@@ -72,10 +88,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB     &kp N1        &kp N2            &kp N3        &kp N4        &kp N5             &kp N6    &kp N7      &kp N8    &kp N9     &kp N0  &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT  &trans  &trans
+&kp LSHFT   &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &kp C_VOL_DN  &kp C_VOLUME_UP    &trans    &kp K_MUTE  &trans    &trans     &trans  &trans
+                                            &kp LGUI      &trans        &kp SPACE          &kp RET   &trans      &kp RALT
             >;
         };
 
@@ -96,10 +112,10 @@
 
         layer_3 {
             bindings = <
-&kp F1  &kp F2      &kp F3      &kp F4      &kp F5      &kp F6        &kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &gotoPage1  &gotoPage2  &gotoPage3  &gotoPage4  &gotoPage5    &trans     &trans  &trans  &trans   &trans   &trans
-&trans  &trans      &trans      &trans      &trans      &trans        &trans     &trans  &trans  &trans   &trans   &trans
-                                &trans      &trans      &kp SPACE     &kp ENTER  &trans  &trans
+&kp F1  &kp F2      &kp F3      &kp F4       &kp F5      &kp F6        &kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &gotoPage1  &gotoPage2  &gotoPage3   &gotoPage4  &gotoPage5    &trans     &trans  &trans  &trans   &trans   &trans
+&trans  &trans      &trans      &consoleLog  &trans      &trans        &trans     &trans  &trans  &trans   &trans   &trans
+                                &trans       &trans      &kp SPACE     &kp ENTER  &trans  &trans
             >;
         };
     };
