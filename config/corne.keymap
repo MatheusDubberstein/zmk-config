@@ -10,11 +10,39 @@
 
 / {
     macros {
-        goto: goto {
+        gotoPage1: goto {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCMD &kp>;
+            bindings = <&kp LCMD &kp NUMBER_1>;
             label = "GOTO";
+        };
+
+        gotoPage2: gotoPage2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCMD &kp NUMBER_2>;
+            label = "GOTOPAGE2";
+        };
+
+        gotoPage3: gotoPage3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCMD &kp NUMBER_3>;
+            label = "GOTOPAGE3";
+        };
+
+        gotoPage4: gotoPage4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCMD &kp NUMBER_4>;
+            label = "GOTOPAGE4";
+        };
+
+        gotoPage5: gotoPage5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCMD &kp NUMBER_5>;
+            label = "GOTOPAGE5";
         };
     };
 
@@ -68,10 +96,10 @@
 
         layer_3 {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6       &kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans   &trans   &trans
-                        &trans  &trans  &kp SPACE    &kp ENTER  &trans  &trans
+&kp F1  &kp F2      &kp F3      &kp F4      &kp F5      &kp F6        &kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &gotoPage1  &gotoPage2  &gotoPage3  &gotoPage4  &gotoPage5    &trans     &trans  &trans  &trans   &trans   &trans
+&trans  &trans      &trans      &trans      &trans      &trans        &trans     &trans  &trans  &trans   &trans   &trans
+                                &trans      &trans      &kp SPACE     &kp ENTER  &trans  &trans
             >;
         };
     };
